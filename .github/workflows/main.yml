@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
-        run: ls
+        
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -52,7 +52,7 @@ jobs:
             ${{ runner.os }}-pods-
 
       - name: Install Pods
-        run: ls && cd ios && pod install --repo-update && cd ..
+        run:  pod install --repo-update && cd ..
 
       - name: Build IOS App
         uses: yukiarrr/ios-build-action@v1.4.0
